@@ -15,6 +15,12 @@
 		2D22C54320B05D47000E8DDD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C54220B05D47000E8DDD /* main.m */; };
 		2D22C54D20B05D47000E8DDD /* AproTwitterTrendsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C54C20B05D47000E8DDD /* AproTwitterTrendsTests.m */; };
 		2D22C55A20B09B60000E8DDD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C55920B09B60000E8DDD /* Router.swift */; };
+		2D22C55C20B09BB9000E8DDD /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C55B20B09BB9000E8DDD /* EndPointType.swift */; };
+		2D22C55E20B09BCB000E8DDD /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C55D20B09BCB000E8DDD /* HTTPMethod.swift */; };
+		2D22C56020B09BD4000E8DDD /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C55F20B09BD4000E8DDD /* HTTPTask.swift */; };
+		2D22C56320B09F35000E8DDD /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C56220B09F35000E8DDD /* ParameterEncoding.swift */; };
+		2D22C56520B09F41000E8DDD /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C56420B09F41000E8DDD /* URLParameterEncoding.swift */; };
+		2D22C56720B09F4C000E8DDD /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C56620B09F4C000E8DDD /* JSONParameterEncoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +49,12 @@
 		2D22C54E20B05D47000E8DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D22C55820B09B60000E8DDD /* AproTwitterTrends-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AproTwitterTrends-Bridging-Header.h"; sourceTree = "<group>"; };
 		2D22C55920B09B60000E8DDD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2D22C55B20B09BB9000E8DDD /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		2D22C55D20B09BCB000E8DDD /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		2D22C55F20B09BD4000E8DDD /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		2D22C56220B09F35000E8DDD /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		2D22C56420B09F41000E8DDD /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
+		2D22C56620B09F4C000E8DDD /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,7 @@
 		2D22C53220B05D47000E8DDD /* AproTwitterTrends */ = {
 			isa = PBXGroup;
 			children = (
+				2D22C56120B09F18000E8DDD /* Encoding */,
 				2D22C55820B09B60000E8DDD /* AproTwitterTrends-Bridging-Header.h */,
 				2D22C55720B09B41000E8DDD /* Service */,
 				2D22C53320B05D47000E8DDD /* AppDelegate.h */,
@@ -112,8 +125,21 @@
 			isa = PBXGroup;
 			children = (
 				2D22C55920B09B60000E8DDD /* Router.swift */,
+				2D22C55B20B09BB9000E8DDD /* EndPointType.swift */,
+				2D22C55D20B09BCB000E8DDD /* HTTPMethod.swift */,
+				2D22C55F20B09BD4000E8DDD /* HTTPTask.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		2D22C56120B09F18000E8DDD /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				2D22C56220B09F35000E8DDD /* ParameterEncoding.swift */,
+				2D22C56420B09F41000E8DDD /* URLParameterEncoding.swift */,
+				2D22C56620B09F4C000E8DDD /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +245,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D22C56720B09F4C000E8DDD /* JSONParameterEncoder.swift in Sources */,
+				2D22C56020B09BD4000E8DDD /* HTTPTask.swift in Sources */,
 				2D22C55A20B09B60000E8DDD /* Router.swift in Sources */,
+				2D22C56320B09F35000E8DDD /* ParameterEncoding.swift in Sources */,
 				2D22C53820B05D47000E8DDD /* ViewController.m in Sources */,
+				2D22C55E20B09BCB000E8DDD /* HTTPMethod.swift in Sources */,
 				2D22C54320B05D47000E8DDD /* main.m in Sources */,
+				2D22C55C20B09BB9000E8DDD /* EndPointType.swift in Sources */,
+				2D22C56520B09F41000E8DDD /* URLParameterEncoding.swift in Sources */,
 				2D22C53520B05D47000E8DDD /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +411,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ng.AproTwitterTrends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AproTwitterTrends/Service/AproTwitterTrends-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AproTwitterTrends/AproTwitterTrends-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -397,7 +429,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ng.AproTwitterTrends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "AproTwitterTrends/Service/AproTwitterTrends-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AproTwitterTrends/AproTwitterTrends-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
