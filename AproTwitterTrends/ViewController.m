@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic) TwitterNetworkManager *networkManager;
+
 @end
 
 @implementation ViewController
@@ -17,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _networkManager = [[TwitterNetworkManager alloc] init];
+    [_networkManager requestAccess];
 }
 
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AproTwitterTrends-Swift.h"
 
 @interface ViewController : UIViewController
 

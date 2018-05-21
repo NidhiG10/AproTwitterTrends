@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import SafariServices
 
 public typealias NetworkRouterCompletion = (_ data: Data?,_ response: URLResponse?,_ error: Error?)->()
 
@@ -32,8 +34,35 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         self.task?.resume()
     }
     
+    func openUrl(_ route: EndPoint) {
+        let authorizeURL = URL(string: route.path, relativeTo: route.baseURL)
+        if let queryURL = queryItems(url: authorizeURL!, dictionary: route.parameters) {
+            DispatchQueue.main.async {
+//                let svc = SFSafariViewController(url: queryURL)
+//                let vc = UIApplication.shared.windows.last?.rootViewController
+//                vc?.present(svc, animated: true, completion: nil)
+                
+                UIApplication.shared.open(queryURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
+    
     func cancel() {
         self.task?.cancel()
+    }
+    
+    func queryItems(url: URL, dictionary: [String:Any]?) -> URL? {
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        if let parameters = dictionary {
+            components?.queryItems = [URLQueryItem]()
+            for (key,value) in parameters {
+                let queryItem = URLQueryItem(name: key,
+                                             value: "\(value)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed))
+                components?.queryItems?.append(queryItem)
+            }
+        }
+        return components?.url
     }
     
     fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest {
