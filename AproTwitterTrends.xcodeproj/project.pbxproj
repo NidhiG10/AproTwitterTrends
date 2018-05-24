@@ -35,6 +35,11 @@
 		2D22C58B20B2AE76000E8DDD /* Int++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C58A20B2AE76000E8DDD /* Int++.swift */; };
 		2D22C58D20B2AEA8000E8DDD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C58C20B2AEA8000E8DDD /* Utils.swift */; };
 		2D22C59020B5D7B9000E8DDD /* TweetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C58F20B5D7B9000E8DDD /* TweetInfo.swift */; };
+		2D22C59520B70E8A000E8DDD /* TrendingTweetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C59420B70E8A000E8DDD /* TrendingTweetsViewModel.swift */; };
+		2D22C59D20B72407000E8DDD /* TrendingTwitterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D22C59C20B72407000E8DDD /* TrendingTwitterCell.xib */; };
+		2D22C5A220B725B6000E8DDD /* TrendingTwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C5A120B725B6000E8DDD /* TrendingTwitterCell.m */; };
+		2D22C5AF20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C5AE20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift */; };
+		2D22C5B120B7390E000E8DDD /* UITableView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C5B020B7390E000E8DDD /* UITableView++.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +89,12 @@
 		2D22C58C20B2AEA8000E8DDD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2D22C58F20B5D7B9000E8DDD /* TweetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetInfo.swift; sourceTree = "<group>"; };
 		2D22C59220B6D704000E8DDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2D22C59420B70E8A000E8DDD /* TrendingTweetsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTweetsViewModel.swift; sourceTree = "<group>"; };
+		2D22C59C20B72407000E8DDD /* TrendingTwitterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingTwitterCell.xib; sourceTree = "<group>"; };
+		2D22C5A020B725B6000E8DDD /* TrendingTwitterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrendingTwitterCell.h; sourceTree = "<group>"; };
+		2D22C5A120B725B6000E8DDD /* TrendingTwitterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendingTwitterCell.m; sourceTree = "<group>"; };
+		2D22C5AE20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTweetsCellViewModel.swift; sourceTree = "<group>"; };
+		2D22C5B020B7390E000E8DDD /* UITableView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView++.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +137,8 @@
 		2D22C53220B05D47000E8DDD /* AproTwitterTrends */ = {
 			isa = PBXGroup;
 			children = (
+				2D22C59720B72351000E8DDD /* Cell */,
+				2D22C59320B70E60000E8DDD /* ViewModel */,
 				2D22C58E20B5D7A3000E8DDD /* Model */,
 				2D22C57220B17922000E8DDD /* Library */,
 				2D22C56D20B17147000E8DDD /* Extension */,
@@ -197,6 +210,7 @@
 				2D22C58820B2AE4D000E8DDD /* Data++.swift */,
 				2D22C58A20B2AE76000E8DDD /* Int++.swift */,
 				2D22C58C20B2AEA8000E8DDD /* Utils.swift */,
+				2D22C5B020B7390E000E8DDD /* UITableView++.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -224,6 +238,33 @@
 				2D22C59220B6D704000E8DDD /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D22C59320B70E60000E8DDD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D22C59420B70E8A000E8DDD /* TrendingTweetsViewModel.swift */,
+				2D22C5AE20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D22C59620B72333000E8DDD /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				2D22C59C20B72407000E8DDD /* TrendingTwitterCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
+		2D22C59720B72351000E8DDD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2D22C59620B72333000E8DDD /* Xibs */,
+				2D22C5A020B725B6000E8DDD /* TrendingTwitterCell.h */,
+				2D22C5A120B725B6000E8DDD /* TrendingTwitterCell.m */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D22C54020B05D47000E8DDD /* LaunchScreen.storyboard in Resources */,
+				2D22C59D20B72407000E8DDD /* TrendingTwitterCell.xib in Resources */,
 				2D22C53D20B05D47000E8DDD /* Assets.xcassets in Resources */,
 				2D22C53B20B05D47000E8DDD /* Main.storyboard in Resources */,
 			);
@@ -334,7 +376,9 @@
 				2D22C56020B09BD4000E8DDD /* HTTPTask.swift in Sources */,
 				2D22C58920B2AE4D000E8DDD /* Data++.swift in Sources */,
 				2D22C56C20B0A340000E8DDD /* TwitterNetworkManager.swift in Sources */,
+				2D22C5B120B7390E000E8DDD /* UITableView++.swift in Sources */,
 				2D22C55A20B09B60000E8DDD /* Router.swift in Sources */,
+				2D22C5A220B725B6000E8DDD /* TrendingTwitterCell.m in Sources */,
 				2D22C56F20B17164000E8DDD /* String++.swift in Sources */,
 				2D22C59020B5D7B9000E8DDD /* TweetInfo.swift in Sources */,
 				2D22C57420B17939000E8DDD /* SHA1.swift in Sources */,
@@ -345,6 +389,7 @@
 				2D22C55E20B09BCB000E8DDD /* HTTPMethod.swift in Sources */,
 				2D22C57A20B18DB3000E8DDD /* Credential.swift in Sources */,
 				2D22C54320B05D47000E8DDD /* main.m in Sources */,
+				2D22C5AF20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift in Sources */,
 				2D22C58D20B2AEA8000E8DDD /* Utils.swift in Sources */,
 				2D22C55C20B09BB9000E8DDD /* EndPointType.swift in Sources */,
 				2D22C57820B18A4D000E8DDD /* TwitterAuth.swift in Sources */,
@@ -352,6 +397,7 @@
 				2D22C56520B09F41000E8DDD /* URLParameterEncoding.swift in Sources */,
 				2D22C57620B17BE4000E8DDD /* HMAC.swift in Sources */,
 				2D22C53520B05D47000E8DDD /* AppDelegate.m in Sources */,
+				2D22C59520B70E8A000E8DDD /* TrendingTweetsViewModel.swift in Sources */,
 				2D22C58B20B2AE76000E8DDD /* Int++.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

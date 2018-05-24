@@ -11,9 +11,9 @@ import Foundation
 @objc class TweetInfo: NSObject {
     var name: String? = nil
     var url: String? = nil
+    var tweetVolume: NSNumber = 0
     var promotedContent: String? = nil
     var query: String? = nil
-    var tweetVolume: Int? = nil
 }
 
 extension TweetInfo{
@@ -37,7 +37,7 @@ extension TweetInfo{
         }
         
         if let tweetVolume = json["tweet_volume"] as? NSNumber {
-            self.tweetVolume = tweetVolume.intValue
+            self.tweetVolume = tweetVolume
         }
     }
 }

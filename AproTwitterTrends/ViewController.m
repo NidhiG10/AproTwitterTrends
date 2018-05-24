@@ -10,7 +10,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic) TwitterNetworkManager *networkManager;
+@property (nonatomic) TrendingTweetsViewModel *viewModel;
 
 @end
 
@@ -19,10 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _networkManager = [[TwitterNetworkManager alloc] init];
-    [_networkManager getTrendingTweetsWithCompletion:^(NSArray<TweetInfo *> * _Nullable tweets, NSString * _Nullable error) {
-        NSLog(@"%@", tweets);
-    }];
+    _viewModel = [[TrendingTweetsViewModel alloc] initWith:self.tableView];
+    [_viewModel getTrendingTweets];
 }
 
 

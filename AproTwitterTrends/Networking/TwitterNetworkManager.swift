@@ -24,7 +24,7 @@ enum Result<String>{
     case failure(String)
 }
 
-@objc class TwitterNetworkManager : NSObject {
+class TwitterNetworkManager : NSObject {
     typealias CompletionHandler = (_ tweets: [TweetInfo]?,_ error: String?)->()
     
     static let oAuthtoken = "oauth_token"
