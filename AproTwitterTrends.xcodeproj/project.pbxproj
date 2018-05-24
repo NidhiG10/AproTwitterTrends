@@ -34,6 +34,7 @@
 		2D22C58920B2AE4D000E8DDD /* Data++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C58820B2AE4D000E8DDD /* Data++.swift */; };
 		2D22C58B20B2AE76000E8DDD /* Int++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C58A20B2AE76000E8DDD /* Int++.swift */; };
 		2D22C58D20B2AEA8000E8DDD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C58C20B2AEA8000E8DDD /* Utils.swift */; };
+		2D22C59020B5D7B9000E8DDD /* TweetInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C58F20B5D7B9000E8DDD /* TweetInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		2D22C58820B2AE4D000E8DDD /* Data++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data++.swift"; sourceTree = "<group>"; };
 		2D22C58A20B2AE76000E8DDD /* Int++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int++.swift"; sourceTree = "<group>"; };
 		2D22C58C20B2AEA8000E8DDD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		2D22C58F20B5D7B9000E8DDD /* TweetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		2D22C53220B05D47000E8DDD /* AproTwitterTrends */ = {
 			isa = PBXGroup;
 			children = (
+				2D22C58E20B5D7A3000E8DDD /* Model */,
 				2D22C57220B17922000E8DDD /* Library */,
 				2D22C56D20B17147000E8DDD /* Extension */,
 				2D22C56820B0A313000E8DDD /* Networking */,
@@ -203,6 +206,14 @@
 				2D22C57320B17939000E8DDD /* SHA1.swift */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		2D22C58E20B5D7A3000E8DDD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D22C58F20B5D7B9000E8DDD /* TweetInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +326,7 @@
 				2D22C56C20B0A340000E8DDD /* TwitterNetworkManager.swift in Sources */,
 				2D22C55A20B09B60000E8DDD /* Router.swift in Sources */,
 				2D22C56F20B17164000E8DDD /* String++.swift in Sources */,
+				2D22C59020B5D7B9000E8DDD /* TweetInfo.swift in Sources */,
 				2D22C57420B17939000E8DDD /* SHA1.swift in Sources */,
 				2D22C56A20B0A333000E8DDD /* TwitterEndPoint.swift in Sources */,
 				2D22C56320B09F35000E8DDD /* ParameterEncoding.swift in Sources */,

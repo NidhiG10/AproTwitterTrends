@@ -15,7 +15,7 @@ public enum TwitterApi {
     case requestAccountRequestToken
     case requestAccountAuthourize(token: Credential.OAuthAccessToken)
     case requestAccountAccessToken(token: Credential.OAuthAccessToken)
-    case trendingTweets(id:Int)
+    case trendingTweets(woeid:String, token: Credential.OAuthAccessToken)
 }
 
 struct OAuth {
@@ -29,6 +29,14 @@ struct OAuth {
 extension TwitterApi: EndPointType {
     
     var baseURL: URL {
+        var baseUrl = ""
+        switch self {
+        case .trendingTweets(_):
+            baseUrl = "https://api.twitter.com/1.1"
+        default:
+            baseUrl = "https://api.twitter.com"
+        }
+         
         guard let url = URL(string: baseUrl) else { fatalError("baseURL could not be configured.")}
         return url
     }
@@ -41,8 +49,8 @@ extension TwitterApi: EndPointType {
             return "oauth/authorize"
         case .requestAccountAccessToken(_):
             return "oauth/access_token"
-        case .trendingTweets(let id):
-            return "\(id)/recommendations"
+        case .trendingTweets(_):
+            return "trends/place.json"
         }
     }
     
@@ -67,13 +75,11 @@ extension TwitterApi: EndPointType {
                                                 bodyEncoding: .urlEncoding,
                                                 urlParameters: nil,
                                                 additionHeaders:self.headers)
-        case .requestAccountAccessToken(_):
-            return .requestParametersAndHeaders(bodyParameters: nil,
-                                                bodyEncoding: .urlEncoding,
-                                                urlParameters: self.parameters,
-                                                additionHeaders:self.headers)
         default:
-            return .request
+            return .requestParametersAndHeaders(bodyParameters: nil,
+                                                       bodyEncoding: .urlEncoding,
+                                                       urlParameters: self.parameters,
+                                                       additionHeaders:self.headers)
         }
     }
     
@@ -87,9 +93,8 @@ extension TwitterApi: EndPointType {
             if let verifier = token.verifier {
                 return ["oauth_token": token.key, "oauth_verifier": verifier]
             }
-            
-        default:
-            return nil
+        case let .trendingTweets(woeid, _):
+            return ["id": woeid]
         }
         
         return nil
@@ -101,6 +106,8 @@ extension TwitterApi: EndPointType {
         case .requestAccountRequestToken():
             return ["Authorization": authorizationHeader(for: self.baseURL.appendingPathComponent(self.path), token: nil , parameters: self.parameters)]
         case .requestAccountAccessToken(let token):
+            return ["Authorization": authorizationHeader(for: self.baseURL.appendingPathComponent(self.path), token:token, parameters: self.parameters)]
+        case let .trendingTweets(_, token):
             return ["Authorization": authorizationHeader(for: self.baseURL.appendingPathComponent(self.path), token:token, parameters: self.parameters)]
             
         default:
@@ -126,7 +133,7 @@ extension TwitterApi: EndPointType {
         
         let combinedParameters = (parameters != nil) ? authorizationParameters +| parameters! : authorizationParameters
         
-        authorizationParameters["oauth_signature"] = self.oauthSignature(for: url, parameters: combinedParameters, accessToken: nil)
+        authorizationParameters["oauth_signature"] = self.oauthSignature(for: url, parameters: combinedParameters, accessToken: token)
         
         let authorizationParameterComponents = authorizationParameters.urlEncodedQueryString(using: dataEncoding).components(separatedBy: "&").sorted()
         
@@ -141,8 +148,8 @@ extension TwitterApi: EndPointType {
         return "OAuth " + headerComponents.joined(separator: ", ")
     }
     
-    func oauthSignature(for url: URL, parameters: Dictionary<String, Any>, accessToken token: String?) -> String {
-        let tokenSecret = token?.urlEncodedString() ?? ""
+    func oauthSignature(for url: URL, parameters: Dictionary<String, Any>, accessToken token: Credential.OAuthAccessToken?) -> String {
+        let tokenSecret = token?.secret.urlEncodedString() ?? ""
         let encodedConsumerSecret = OAuth.consumerSecretKey.urlEncodedString()
         let signingKey = "\(encodedConsumerSecret)&\(tokenSecret)"
         

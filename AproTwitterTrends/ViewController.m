@@ -20,7 +20,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _networkManager = [[TwitterNetworkManager alloc] init];
-    [_networkManager requestAccess];
+    [_networkManager getTrendingTweetsWithCompletion:^(NSArray<TweetInfo *> * _Nullable tweets, NSString * _Nullable error) {
+        NSLog(@"%@", tweets);
+    }];
 }
 
 
