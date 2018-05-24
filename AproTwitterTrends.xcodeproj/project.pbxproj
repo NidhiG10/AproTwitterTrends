@@ -83,6 +83,7 @@
 		2D22C58A20B2AE76000E8DDD /* Int++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int++.swift"; sourceTree = "<group>"; };
 		2D22C58C20B2AEA8000E8DDD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		2D22C58F20B5D7B9000E8DDD /* TweetInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetInfo.swift; sourceTree = "<group>"; };
+		2D22C59220B6D704000E8DDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +110,7 @@
 				2D22C53220B05D47000E8DDD /* AproTwitterTrends */,
 				2D22C54B20B05D47000E8DDD /* AproTwitterTrendsTests */,
 				2D22C53120B05D47000E8DDD /* Products */,
+				2D22C59120B6D704000E8DDD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +216,14 @@
 				2D22C58F20B5D7B9000E8DDD /* TweetInfo.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2D22C59120B6D704000E8DDD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D22C59220B6D704000E8DDD /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

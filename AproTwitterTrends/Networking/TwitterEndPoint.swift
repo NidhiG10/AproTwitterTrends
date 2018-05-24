@@ -15,6 +15,7 @@ public enum TwitterApi {
     case requestAccountRequestToken
     case requestAccountAuthourize(token: Credential.OAuthAccessToken)
     case requestAccountAccessToken(token: Credential.OAuthAccessToken)
+    case getWoeid(lat: Double, long: Double, token: Credential.OAuthAccessToken)
     case trendingTweets(woeid:String, token: Credential.OAuthAccessToken)
 }
 
@@ -31,7 +32,7 @@ extension TwitterApi: EndPointType {
     var baseURL: URL {
         var baseUrl = ""
         switch self {
-        case .trendingTweets(_):
+        case .trendingTweets(_), .getWoeid(_):
             baseUrl = "https://api.twitter.com/1.1"
         default:
             baseUrl = "https://api.twitter.com"
@@ -51,7 +52,10 @@ extension TwitterApi: EndPointType {
             return "oauth/access_token"
         case .trendingTweets(_):
             return "trends/place.json"
+        case .getWoeid(_):
+            return "trends/closest.json"
         }
+        
     }
     
     var httpMethod: HTTPMethod {
@@ -95,7 +99,9 @@ extension TwitterApi: EndPointType {
             }
         case let .trendingTweets(woeid, _):
             return ["id": woeid]
-        }
+        case let .getWoeid(lat, long, _):
+            return ["lat": lat, "long": long]
+    }
         
         return nil
     }
@@ -108,6 +114,8 @@ extension TwitterApi: EndPointType {
         case .requestAccountAccessToken(let token):
             return ["Authorization": authorizationHeader(for: self.baseURL.appendingPathComponent(self.path), token:token, parameters: self.parameters)]
         case let .trendingTweets(_, token):
+            return ["Authorization": authorizationHeader(for: self.baseURL.appendingPathComponent(self.path), token:token, parameters: self.parameters)]
+        case let .getWoeid(_, _, token):
             return ["Authorization": authorizationHeader(for: self.baseURL.appendingPathComponent(self.path), token:token, parameters: self.parameters)]
             
         default:

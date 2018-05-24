@@ -37,11 +37,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     func openUrl(_ route: EndPoint) {
         let authorizeURL = URL(string: route.path, relativeTo: route.baseURL)
         if let queryURL = queryItems(url: authorizeURL!, dictionary: route.parameters) {
-            DispatchQueue.main.async {
-//                let svc = SFSafariViewController(url: queryURL)
-//                let vc = UIApplication.shared.windows.last?.rootViewController
-//                vc?.present(svc, animated: true, completion: nil)
-                
+            DispatchQueue.main.async {    
                 UIApplication.shared.open(queryURL, options: [:], completionHandler: nil)
             }
         }
