@@ -38,7 +38,6 @@
 		2D22C59520B70E8A000E8DDD /* TrendingTweetsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C59420B70E8A000E8DDD /* TrendingTweetsViewModel.swift */; };
 		2D22C59D20B72407000E8DDD /* TrendingTwitterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D22C59C20B72407000E8DDD /* TrendingTwitterCell.xib */; };
 		2D22C5A220B725B6000E8DDD /* TrendingTwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C5A120B725B6000E8DDD /* TrendingTwitterCell.m */; };
-		2D22C5AF20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C5AE20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift */; };
 		2D22C5B120B7390E000E8DDD /* UITableView++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D22C5B020B7390E000E8DDD /* UITableView++.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +92,6 @@
 		2D22C59C20B72407000E8DDD /* TrendingTwitterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrendingTwitterCell.xib; sourceTree = "<group>"; };
 		2D22C5A020B725B6000E8DDD /* TrendingTwitterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrendingTwitterCell.h; sourceTree = "<group>"; };
 		2D22C5A120B725B6000E8DDD /* TrendingTwitterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrendingTwitterCell.m; sourceTree = "<group>"; };
-		2D22C5AE20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingTweetsCellViewModel.swift; sourceTree = "<group>"; };
 		2D22C5B020B7390E000E8DDD /* UITableView++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView++.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -244,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				2D22C59420B70E8A000E8DDD /* TrendingTweetsViewModel.swift */,
-				2D22C5AE20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -389,7 +386,6 @@
 				2D22C55E20B09BCB000E8DDD /* HTTPMethod.swift in Sources */,
 				2D22C57A20B18DB3000E8DDD /* Credential.swift in Sources */,
 				2D22C54320B05D47000E8DDD /* main.m in Sources */,
-				2D22C5AF20B730A7000E8DDD /* TrendingTweetsCellViewModel.swift in Sources */,
 				2D22C58D20B2AEA8000E8DDD /* Utils.swift in Sources */,
 				2D22C55C20B09BB9000E8DDD /* EndPointType.swift in Sources */,
 				2D22C57820B18A4D000E8DDD /* TwitterAuth.swift in Sources */,
